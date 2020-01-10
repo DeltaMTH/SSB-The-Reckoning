@@ -699,7 +699,7 @@ CharChoice = 0
 CharChoice2 = 0
 LevelChoice = 0
 Menu()
-game.onUpdate(function () {
+game.onUpdateInterval(1000, function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
         Ready = sprites.create(img`
 d d 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 4 4 5 5 2 2 
