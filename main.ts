@@ -309,23 +309,29 @@ d d d d d 1 d d d d d d c 1 c d
 }
 function Link () {
     Lynk = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f f f f f f f f 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    if (Player2Link == "false") {
+        controller.moveSprite(Lynk, 100, 0)
+    }
+    if (Player2Link == "true") {
+        controller.player2.moveSprite(Lynk, 100, 0)
+    }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -429,43 +435,55 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
 })
 function Kirby () {
     kiryb = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 f f 1 1 1 1 
+1 1 1 1 f 1 1 1 1 f f 1 1 1 1 1 
+1 1 1 1 1 f 1 1 f f 1 1 1 1 1 1 
+1 1 1 1 1 f f f 1 1 1 1 1 1 1 1 
+1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f f f f 1 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 f f 1 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 f f 1 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 f f 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    if (Player2Kirby == "false") {
+        controller.moveSprite(kiryb, 100, 0)
+    }
+    if (Player2Kirby == "true") {
+        controller.player2.moveSprite(kiryb, 100, 0)
+    }
 }
 function MegaMan () {
     Meguhmen = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 f f 1 1 1 1 1 f f 1 1 1 1 1 
+1 1 f f 1 1 1 1 1 f f f 1 1 1 1 
+1 1 f 1 f f 1 1 f 1 1 f 1 1 1 1 
+1 1 f 1 1 f f 1 f 1 1 1 f 1 1 1 
+1 1 f 1 1 1 f f f 1 1 1 f 1 1 1 
+1 1 f 1 1 1 1 f 1 1 1 1 1 f 1 1 
+1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 f 1 1 1 1 1 1 1 f f 1 1 1 1 1 
+1 1 1 1 f f 1 1 1 f f 1 1 1 1 1 
+1 1 1 1 f 1 f 1 f 1 1 f 1 1 1 1 
+1 1 1 f 1 1 1 f f 1 1 f f 1 1 1 
+1 1 1 f 1 1 1 f f 1 1 1 1 1 1 1 
+1 1 1 f 1 1 1 f f 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    if (Player2MegaMan == "false") {
+        controller.moveSprite(Meguhmen, 100, 0)
+    }
+    if (Player2MegaMan == "true") {
+        controller.player2.moveSprite(Meguhmen, 100, 0)
+    }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -518,23 +536,29 @@ function Map1 () {
 }
 function Pikachu () {
     Pykuhchu = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f f f 1 1 1 1 1 1 1 
+1 1 1 1 f f f 1 1 f f 1 1 1 1 1 
+1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 f 1 1 1 1 1 1 
+1 1 1 f 1 1 1 1 f f 1 1 1 1 1 1 
+1 1 1 f f f f f 1 1 1 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
+    if (Player2Pika == "false") {
+        controller.moveSprite(Pykuhchu, 100, 0)
+    }
+    if (Player2Pika == "true") {
+        controller.player2.moveSprite(Pykuhchu, 100, 0)
+    }
 }
 function Mario2 () {
     Mario = sprites.create(img`
