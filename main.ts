@@ -456,9 +456,6 @@ scene.onOverlapTile(SpriteKind.Player2, myTiles.tile3, function (sprite, locatio
     ChSelect2 = 1
     CharChoice2 = 6
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
-	
-})
 function Kirby () {
     kiryb = sprites.create(img`
 . . . . . . f f f f f . . . . . 
@@ -550,7 +547,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     CharChoice = 4
 })
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (StartGame2 == 1) {
+    if (StartGame1 == 1) {
         if (CharChoice2 == 1) {
             Mario.vy = -150
         }
