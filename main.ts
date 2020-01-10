@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const banner = SpriteKind.create()
+    export const Player2 = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -326,6 +327,10 @@ d d d d d c c c c c d d d 1 d d
 1 1 1 1 c c f f f f c 1 1 1 1 1 
 `
 }
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile8, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
+    ChSelect2 = 1
+})
 function Link () {
     Lynk = sprites.create(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -402,6 +407,10 @@ controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pres
         MrGameAndWatch.vy = -100
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.brick, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(3, 6), sprites.builtin.brick)
+    ChSelect1 = 0
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
@@ -415,9 +424,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
         StartGame2 += 1
         CharChoice2 = 6
     }
-})
-scene.onOverlapTile(SpriteKind.Food, sprites.builtin.brick, function (sprite, location) {
-	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -584,7 +590,8 @@ controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pres
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
-	
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
+    ChSelect1 = 1
 })
 function Map1 () {
     tiles.setTilemap(tiles.createTilemap(
@@ -678,7 +685,7 @@ function Cursor_2 () {
 . . . . f . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Player2)
     controller.player2.moveSprite(Cursor2, 110, 110)
 }
 function Menu () {
@@ -737,13 +744,15 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
         CharChoice2 = 3
     }
 })
-scene.onOverlapTile(SpriteKind.Food, myTiles.tile8, function (sprite, location) {
-	
+scene.onOverlapTile(SpriteKind.Player2, sprites.builtin.brick, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), sprites.builtin.brick)
+    ChSelect2 = 0
 })
 let Cursor2: Sprite = null
 let Cursor1: Sprite = null
 let Ready: Sprite = null
 let Player2GameWatch = ""
+let ChSelect1 = 0
 let MrGameAndWatch: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
@@ -752,6 +761,7 @@ let Mario: Sprite = null
 let StartGame2 = 0
 let StartGame1 = 0
 let Lynk: Sprite = null
+let ChSelect2 = 0
 let LevelChoice = 0
 let CharChoice2 = 0
 let CharChoice = 0
@@ -769,6 +779,18 @@ CharChoice = 0
 CharChoice2 = 0
 LevelChoice = 0
 Menu()
+game.onUpdate(function () {
+    if (controller.A.isPressed() && ChSelect1 == 1) {
+        StartGame1 += 1
+        controller.moveSprite(Cursor1, 0, 0)
+    }
+})
+game.onUpdate(function () {
+    if (controller.player2.isPressed(ControllerButton.A) && ChSelect2 == 1) {
+        StartGame2 += 1
+        controller.player2.moveSprite(Cursor2, 0, 0)
+    }
+})
 game.onUpdateInterval(1000, function () {
     if (StartGame1 >= 1 && StartGame2 >= 1) {
         Ready = sprites.create(img`
