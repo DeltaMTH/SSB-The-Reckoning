@@ -330,6 +330,7 @@ d d d d d c c c c c d d d 1 d d
 scene.onOverlapTile(SpriteKind.Player2, myTiles.tile8, function (sprite, location) {
     tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
     ChSelect2 = 1
+    CharChoice = 1
 })
 function Link () {
     Lynk = sprites.create(img`
@@ -360,116 +361,103 @@ function Link () {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile9)
-        Player2Kirby = "false"
-        StartGame1 += 1
-        CharChoice = 2
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile9)
-        Player2Kirby = "true"
-        StartGame2 += 1
-        CharChoice2 = 2
-    }
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile9)
+    ChSelect1 = 1
+    CharChoice = 2
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile1)
-        Player2Link = "false"
-        StartGame1 += 1
-        CharChoice = 5
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile1)
+    ChSelect1 = 1
+    CharChoice = 5
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (LevelChoice == 0) {
+        Map1()
+        Ready.destroy()
+        Cursor1.destroy()
+        Cursor2.destroy()
     }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile1)
-        Player2Link = "true"
-        StartGame2 += 1
-        CharChoice2 = 5
+    if (CharChoice == 1) {
+        Mario2()
+    }
+    if (CharChoice2 == 1) {
+        Mario2()
+    }
+    if (CharChoice == 2) {
+        Kirby()
+    }
+    if (CharChoice2 == 2) {
+        Kirby()
+    }
+    if (CharChoice == 3) {
+        MegaMan()
+    }
+    if (CharChoice2 == 3) {
+        MegaMan()
+    }
+    if (CharChoice == 4) {
+        Pikachu()
+    }
+    if (CharChoice2 == 4) {
+        Pikachu()
+    }
+    if (CharChoice == 5) {
+        Link()
+    }
+    if (CharChoice2 == 5) {
+        Link()
+    }
+    if (CharChoice == 6) {
+        GameWatch()
+    }
+    if (CharChoice2 == 6) {
+        GameWatch()
     }
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (CharChoice == 1) {
-        Mario.vy = -200
-    }
-    if (CharChoice == 2) {
-        kiryb.vy = -100
-    }
-    if (CharChoice == 3) {
-        Meguhmen.vy = -100
-    }
-    if (CharChoice == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice == 5) {
-        Lynk.vy = -100
-    }
-    if (CharChoice == 6) {
-        MrGameAndWatch.vy = -100
+    if (StartGame1 == 1) {
+        if (CharChoice == 1) {
+            Mario.vy = -200
+        }
+        if (CharChoice == 2) {
+            kiryb.vy = -100
+        }
+        if (CharChoice == 3) {
+            Meguhmen.vy = -100
+        }
+        if (CharChoice == 4) {
+            Pykuhchu.vy = -100
+        }
+        if (CharChoice == 5) {
+            Lynk.vy = -100
+        }
+        if (CharChoice == 6) {
+            MrGameAndWatch.vy = -100
+        }
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.brick, function (sprite, location) {
-    tiles.setTileAt(tiles.getTileLocation(3, 6), sprites.builtin.brick)
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile10)
     ChSelect1 = 0
+    CharChoice = 0
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
-        Player2GameWatch = "false"
-        StartGame1 += 1
-        CharChoice = 6
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile3)
-        Player2GameWatch = "True"
-        StartGame2 += 1
-        CharChoice2 = 6
-    }
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
+    ChSelect1 = 1
+    CharChoice = 6
+})
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile1, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile1)
+    ChSelect2 = 1
+    CharChoice2 = 5
+})
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile3, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile3)
+    ChSelect2 = 1
+    CharChoice2 = 6
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        if (LevelChoice == 0) {
-            Map1()
-            Ready.destroy()
-            Cursor1.destroy()
-            Cursor2.destroy()
-        }
-        if (CharChoice == 1) {
-            Mario2()
-        }
-        if (CharChoice2 == 1) {
-            Mario2()
-        }
-        if (CharChoice == 2) {
-            Kirby()
-        }
-        if (CharChoice2 == 2) {
-            Kirby()
-        }
-        if (CharChoice == 3) {
-            MegaMan()
-        }
-        if (CharChoice2 == 3) {
-            MegaMan()
-        }
-        if (CharChoice == 4) {
-            Pikachu()
-        }
-        if (CharChoice2 == 4) {
-            Pikachu()
-        }
-        if (CharChoice == 5) {
-            Link()
-        }
-        if (CharChoice2 == 5) {
-            Link()
-        }
-        if (CharChoice == 6) {
-            GameWatch()
-        }
-        if (CharChoice2 == 6) {
-            GameWatch()
-        }
-    }
+	
 })
 function Kirby () {
     kiryb = sprites.create(img`
@@ -500,6 +488,7 @@ f 2 2 2 2 2 f f f f 2 2 2 2 f .
     }
 }
 function GameWatch () {
+    let Player2GameWatch = ""
     MrGameAndWatch = sprites.create(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 f f 1 1 1 1 1 1 1 1 1 1 
@@ -556,42 +545,41 @@ function MegaMan () {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
-        Player2Pika = "false"
-        StartGame1 += 1
-        CharChoice = 4
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
-        Player2Pika = "True"
-        StartGame2 += 1
-        CharChoice2 = 4
-    }
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
+    ChSelect1 = 1
+    CharChoice = 4
 })
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (CharChoice2 == 1) {
-        Mario.vy = -150
+    if (StartGame2 == 1) {
+        if (CharChoice2 == 1) {
+            Mario.vy = -150
+        }
+        if (CharChoice2 == 2) {
+            kiryb.vy = -100
+        }
+        if (CharChoice2 == 3) {
+            Meguhmen.vy = -100
+        }
+        if (CharChoice2 == 4) {
+            Pykuhchu.vy = -100
+        }
+        if (CharChoice2 == 5) {
+            Lynk.ay = -100
+        }
+        if (CharChoice2 == 6) {
+            MrGameAndWatch.ay = -100
+        }
     }
-    if (CharChoice2 == 2) {
-        kiryb.vy = -100
-    }
-    if (CharChoice2 == 3) {
-        Meguhmen.vy = -100
-    }
-    if (CharChoice2 == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = -100
-    }
-    if (CharChoice2 == 6) {
-        MrGameAndWatch.ay = -100
-    }
+})
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile11, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile11)
+    ChSelect2 = 1
+    CharChoice2 = 4
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
     ChSelect1 = 1
+    CharChoice = 1
 })
 function Map1 () {
     tiles.setTilemap(tiles.createTilemap(
@@ -673,21 +661,31 @@ function Cursor_2 () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
+. . . . . . 8 8 8 8 . . . . . . 
+. . . . . 8 f f f f 8 . . . . . 
+. . . . 8 f f f f f f 8 . . . . 
+. . . . 8 f f f f f f 8 . . . . 
+. . . . 8 f f f f f f 8 . . . . 
+. . . . 8 f f f f f f 8 . . . . 
+. . . . . 8 f f f f 8 . . . . . 
+. . . . . . 8 8 8 8 . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . f f f f f f f . . . . . 
-. . . . f 8 8 8 8 8 f . . . . . 
-. . . . . f 8 8 8 8 f . . . . . 
-. . . . . . f 8 8 8 f . . . . . 
-. . . . . f 8 f 8 8 f . . . . . 
-. . . . f 8 f . f 8 f . . . . . 
-. . . f 8 f . . . f f . . . . . 
-. . . . f . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player2)
     controller.player2.moveSprite(Cursor2, 110, 110)
 }
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile9, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile9)
+    ChSelect2 = 1
+    CharChoice2 = 2
+})
+scene.onOverlapTile(SpriteKind.Player2, myTiles.tile14, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
+    ChSelect2 = 1
+    CharChoice2 = 4
+})
 function Menu () {
     scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
@@ -715,51 +713,42 @@ function Cursor_1 () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 2 . . . . . . 
+. . . . . 2 f f f f 2 . . . . . 
+. . . . 2 f f f f f f 2 . . . . 
+. . . . 2 f f f f f f 2 . . . . 
+. . . . 2 f f f f f f 2 . . . . 
+. . . . 2 f f f f f f 2 . . . . 
+. . . . . 2 f f f f 2 . . . . . 
+. . . . . . 2 2 2 2 . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . f f f f f f f . . . . . 
-. . . . f 2 2 2 2 2 f . . . . . 
-. . . . . f 2 2 2 2 f . . . . . 
-. . . . . . f 2 2 2 f . . . . . 
-. . . . . f 2 f 2 2 f . . . . . 
-. . . . f 2 f . f 2 f . . . . . 
-. . . f 2 f . . . f f . . . . . 
-. . . . f . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
     controller.moveSprite(Cursor1, 110, 110)
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile11)
-        Player2MegaMan = "false"
-        StartGame1 += 1
-        CharChoice = 3
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile11)
-        Player2MegaMan = "true"
-        StartGame2 += 1
-        CharChoice2 = 3
-    }
+    tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile11)
+    ChSelect1 = 1
+    CharChoice = 4
 })
 scene.onOverlapTile(SpriteKind.Player2, sprites.builtin.brick, function (sprite, location) {
-    tiles.setTileAt(tiles.getTileLocation(7, 6), sprites.builtin.brick)
+    tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile10)
     ChSelect2 = 0
+    CharChoice2 = 0
 })
-let Cursor2: Sprite = null
-let Cursor1: Sprite = null
-let Ready: Sprite = null
-let Player2GameWatch = ""
-let ChSelect1 = 0
+let StartGame2 = 0
 let MrGameAndWatch: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
 let Mario: Sprite = null
-let StartGame2 = 0
 let StartGame1 = 0
+let Cursor2: Sprite = null
+let Cursor1: Sprite = null
+let Ready: Sprite = null
+let ChSelect1 = 0
 let Lynk: Sprite = null
 let ChSelect2 = 0
 let LevelChoice = 0
@@ -781,13 +770,13 @@ LevelChoice = 0
 Menu()
 game.onUpdate(function () {
     if (controller.A.isPressed() && ChSelect1 == 1) {
-        StartGame1 += 1
+        StartGame1 = 1
         controller.moveSprite(Cursor1, 0, 0)
     }
 })
 game.onUpdate(function () {
     if (controller.player2.isPressed(ControllerButton.A) && ChSelect2 == 1) {
-        StartGame2 += 1
+        StartGame2 = 1
         controller.player2.moveSprite(Cursor2, 0, 0)
     }
 })
