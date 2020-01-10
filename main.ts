@@ -61,22 +61,22 @@ b b b b b e e e b b b b b b b b
 `
     //% blockIdentity=images._tile
     export const tile3 = img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+b b b c c f f f f f f c b b b b 
+b b 5 c f f f f f f f c c c b b 
+b 5 5 c f f f f f f f f f c 5 b 
+b 5 5 c f f f f f f f f f c 5 b 
+b 5 5 c f f f f f c c c c c 5 b 
+b 5 5 c c f f f f f f c 5 5 5 b 
+b 5 5 5 c c c f c c c c c 5 5 b 
+b 5 c c f f f f f f f f c c 5 b 
+c c c f c c f f f f c c f c c c 
+c f f c 5 c f f f f c 5 c f f c 
+c f f c 5 c f f f f c 5 c f f c 
+c c c 5 c f f f f f f c 5 c c c 
+b 5 c c f c c c c c c f c c 5 b 
+b c f f f c 5 5 5 5 c f f f c b 
+b c f f f c 5 5 5 5 c f f f c b 
+b c c c c c b b b b c c c c c b 
 `
     //% blockIdentity=images._tile
     export const tile4 = img`
@@ -306,34 +306,25 @@ d d d d d 1 d d d d d d c 1 c d
 d d d d d 1 d d d d d d c 1 c d 
 1 1 1 1 1 1 7 7 7 7 7 7 c 1 c 1 
 `
-}
-function Link () {
-    Lynk = sprites.create(img`
+    //% blockIdentity=images._tile
+    export const tile18 = img`
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 f f f f f f f f 1 1 1 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-`, SpriteKind.Player)
-    if (Player2Link == "false") {
-        controller.moveSprite(Lynk, 100, 0)
-        Lynk.ay = 300
-    }
-    if (Player2Link == "true") {
-        controller.player2.moveSprite(Lynk, 100, 0)
-        Lynk.ay = 300
-    }
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+d 1 d d d d d d d 1 d d d d d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d 1 d d d d d d d 1 d d 
+d d d d d c c c c c d d d 1 d d 
+1 1 1 1 c c f f f f c 1 1 1 1 1 
+`
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -363,63 +354,62 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         CharChoice2 = 5
     }
 })
-controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (CharChoice == 1) {
-        Mario.vy = -200
+function Link () {
+    Lynk = sprites.create(img`
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 f f f f f f f f 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+`, SpriteKind.Player)
+    if (Player2Link == "false") {
+        controller.moveSprite(Lynk, 100, 0)
+        Lynk.ay = 300
     }
-    if (CharChoice == 2) {
-        kiryb.vy = -100
+    if (Player2Link == "true") {
+        controller.player2.moveSprite(Lynk, 100, 0)
+        Lynk.ay = 300
     }
-    if (CharChoice == 3) {
-        Meguhmen.vy = -100
+}
+function GameWatch () {
+    MrGameAndWatch = sprites.create(img`
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 f f 1 1 1 1 1 1 1 1 1 1 
+1 1 f f f 1 1 1 1 1 1 1 1 1 1 1 
+1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 f 1 1 f f f f 1 1 1 1 1 1 1 
+1 1 f f 1 1 1 1 f 1 1 1 1 1 1 1 
+1 1 1 f 1 1 1 1 f 1 1 1 1 1 1 1 
+1 1 1 1 f f f f 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 f 1 1 
+1 1 1 1 1 1 1 1 f 1 1 1 1 f 1 1 
+1 1 1 1 1 1 1 1 f 1 f 1 1 f 1 1 
+1 1 1 1 1 1 1 1 f f f f 1 f 1 1 
+1 1 1 1 1 1 1 1 1 f f f f 1 1 1 
+`, SpriteKind.Player)
+    if (Player2GameWatch == "false") {
+        controller.moveSprite(MrGameAndWatch, 100, 0)
+        MrGameAndWatch.ay = 100
     }
-    if (CharChoice == 4) {
-        Pykuhchu.vy = -100
+    if (Player2GameWatch == "true") {
+        controller.player2.moveSprite(MrGameAndWatch, 100, 0)
+        MrGameAndWatch.ay = 100
     }
-    if (CharChoice == 5) {
-        Lynk.vy = -100
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        if (LevelChoice == 0) {
-            Map1()
-            Ready.destroy()
-            Cursor1.destroy()
-            Cursor2.destroy()
-        }
-        if (CharChoice == 1) {
-            Mario2()
-        }
-        if (CharChoice2 == 1) {
-            Mario2()
-        }
-        if (CharChoice == 2) {
-            Kirby()
-        }
-        if (CharChoice2 == 2) {
-            Kirby()
-        }
-        if (CharChoice == 3) {
-            MegaMan()
-        }
-        if (CharChoice2 == 3) {
-            MegaMan()
-        }
-        if (CharChoice == 4) {
-            Pikachu()
-        }
-        if (CharChoice2 == 4) {
-            Pikachu()
-        }
-        if (CharChoice == 5) {
-            Link()
-        }
-        if (CharChoice2 == 5) {
-            Link()
-        }
-    }
-})
+}
 function Kirby () {
     kiryb = sprites.create(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -476,51 +466,6 @@ function MegaMan () {
         Meguhmen.ay = 250
     }
 }
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
-        Player2Pika = "false"
-        StartGame1 += 1
-        CharChoice = 4
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
-        Player2Pika = "True"
-        StartGame2 += 1
-        CharChoice2 = 4
-    }
-})
-controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (CharChoice2 == 1) {
-        Mario.vy = -150
-    }
-    if (CharChoice2 == 2) {
-        kiryb.vy = -100
-    }
-    if (CharChoice2 == 3) {
-        Meguhmen.vy = -100
-    }
-    if (CharChoice2 == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = -100
-    }
-})
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
-    if (controller.player1.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
-        Player2Mario = "false"
-        StartGame1 += 1
-        CharChoice = 1
-    }
-    if (controller.player2.isPressed(ControllerButton.A)) {
-        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
-        Player2Mario = "true"
-        StartGame2 += 1
-        CharChoice2 = 1
-    }
-})
 function Map1 () {
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000900131112131113121112131112121112121213111211131112111112111313121112131312121212111212121213121212131213060808080808080711120c0c0c0c0c0c0c0c121010101010101010101010101010101010101010`,
@@ -535,7 +480,7 @@ function Map1 () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.castle.tilePath8,myTiles.tile17],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.chestOpen,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles6,sprites.builtin.forestTiles8,sprites.builtin.forestTiles7,sprites.builtin.forestTiles10,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.castle.tilePath8,myTiles.tile17,myTiles.tile18],
             TileScale.Sixteen
         ))
 }
@@ -620,7 +565,7 @@ function Menu () {
     scene.centerCameraAt(88, 0)
     scene.setBackgroundColor(1)
     tiles.setTilemap(tiles.createTilemap(
-            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a110a0a120a0a0a0a0a0a0a100a0a010a0a0d0a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
+            hex`0b0008000a0a0a0a0a0a0a0a0f0a0a0a0a0b0a0a0c0a0a0e0a0a0a0a110a0a120a0a130a0a0a0a100a0a010a0a030a0a0a0a0a0a0a0a0a0a0a0a0a02020202020202020202020202020d0202020d0202020202020202020202020202`,
             img`
 . . . . . . . . . . . 
 . . . . . . . . . . . 
@@ -631,7 +576,7 @@ function Menu () {
 . . . . . . . . . . . 
 . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile17],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.oceanSand13,sprites.builtin.oceanSand8,sprites.builtin.brick,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile17,myTiles.tile18],
             TileScale.Sixteen
         ))
     Cursor_1()
@@ -658,6 +603,134 @@ function Cursor_1 () {
 `, SpriteKind.Player)
     controller.moveSprite(Cursor1, 110, 110)
 }
+controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+    if (CharChoice == 1) {
+        Mario.vy = -200
+    }
+    if (CharChoice == 2) {
+        kiryb.vy = -100
+    }
+    if (CharChoice == 3) {
+        Meguhmen.vy = -100
+    }
+    if (CharChoice == 4) {
+        Pykuhchu.vy = -100
+    }
+    if (CharChoice == 5) {
+        Lynk.vy = -100
+    }
+    if (CharChoice == 6) {
+        MrGameAndWatch.vy = -100
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile3)
+        Player2GameWatch = "false"
+        StartGame1 += 1
+        CharChoice = 6
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile3)
+        Player2GameWatch = "True"
+        StartGame2 += 1
+        CharChoice2 = 6
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        if (LevelChoice == 0) {
+            Map1()
+            Ready.destroy()
+            Cursor1.destroy()
+            Cursor2.destroy()
+        }
+        if (CharChoice == 1) {
+            Mario2()
+        }
+        if (CharChoice2 == 1) {
+            Mario2()
+        }
+        if (CharChoice == 2) {
+            Kirby()
+        }
+        if (CharChoice2 == 2) {
+            Kirby()
+        }
+        if (CharChoice == 3) {
+            MegaMan()
+        }
+        if (CharChoice2 == 3) {
+            MegaMan()
+        }
+        if (CharChoice == 4) {
+            Pikachu()
+        }
+        if (CharChoice2 == 4) {
+            Pikachu()
+        }
+        if (CharChoice == 5) {
+            Link()
+        }
+        if (CharChoice2 == 5) {
+            Link()
+        }
+        if (CharChoice == 6) {
+            GameWatch()
+        }
+        if (CharChoice2 == 6) {
+            GameWatch()
+        }
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile14)
+        Player2Pika = "false"
+        StartGame1 += 1
+        CharChoice = 4
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile14)
+        Player2Pika = "True"
+        StartGame2 += 1
+        CharChoice2 = 4
+    }
+})
+controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+    if (CharChoice2 == 1) {
+        Mario.vy = -150
+    }
+    if (CharChoice2 == 2) {
+        kiryb.vy = -100
+    }
+    if (CharChoice2 == 3) {
+        Meguhmen.vy = -100
+    }
+    if (CharChoice2 == 4) {
+        Pykuhchu.vy = -100
+    }
+    if (CharChoice2 == 5) {
+        Lynk.ay = -100
+    }
+    if (CharChoice2 == 6) {
+        MrGameAndWatch.ay = -100
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
+    if (controller.player1.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
+        Player2Mario = "false"
+        StartGame1 += 1
+        CharChoice = 1
+    }
+    if (controller.player2.isPressed(ControllerButton.A)) {
+        tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile8)
+        Player2Mario = "true"
+        StartGame2 += 1
+        CharChoice2 = 1
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
         tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile11)
@@ -672,16 +745,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
         CharChoice2 = 3
     }
 })
-let Cursor2: Sprite = null
-let Cursor1: Sprite = null
 let Ready: Sprite = null
+let Cursor1: Sprite = null
+let Cursor2: Sprite = null
+let Mario: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
-let Mario: Sprite = null
+let Player2GameWatch = ""
+let MrGameAndWatch: Sprite = null
+let Lynk: Sprite = null
 let StartGame2 = 0
 let StartGame1 = 0
-let Lynk: Sprite = null
 let LevelChoice = 0
 let CharChoice2 = 0
 let CharChoice = 0
