@@ -467,22 +467,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
 })
 function Kirby () {
     kiryb = sprites.create(img`
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 1 f 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 f f 1 1 1 1 
-1 1 1 1 f 1 1 1 1 f f 1 1 1 1 1 
-1 1 1 1 1 f 1 1 f f 1 1 1 1 1 1 
-1 1 1 1 1 f f f 1 1 1 1 1 1 1 1 
-1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 
-1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 
-1 1 1 1 f f f f 1 1 1 1 1 1 1 1 
-1 1 1 1 f 1 1 f f 1 1 1 1 1 1 1 
-1 1 1 1 f 1 1 1 f f 1 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 f f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+. . . . . . f f f f f . . . . . 
+. . . . f f 3 3 3 3 3 f f . . . 
+. . . f 3 3 3 3 3 3 3 3 3 f . . 
+. . f 3 3 3 3 3 3 3 3 3 3 f . . 
+. . f 3 3 3 3 f 3 f 3 3 3 3 f . 
+. f 3 3 3 3 3 f 3 f 3 3 3 3 f . 
+f 3 3 3 3 3 3 f 3 f 3 3 3 3 3 f 
+f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+f 3 3 3 3 3 3 3 f 3 3 3 f 3 3 f 
+f 3 3 f 3 3 3 3 3 3 3 3 f 3 3 f 
+. f f 3 3 3 3 3 3 3 3 3 3 f f . 
+. . f f 3 3 3 3 3 3 3 f f . . . 
+. f 2 2 f f f f f f f 2 2 f . . 
+f 2 2 2 2 2 f f f f 2 2 2 2 f . 
+. f f f f f . . . f f f f f . . 
 `, SpriteKind.Player)
     if (Player2Kirby == "false") {
         controller.moveSprite(kiryb, 100, 0)
