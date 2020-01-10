@@ -328,9 +328,11 @@ function Link () {
 `, SpriteKind.Player)
     if (Player2Link == "false") {
         controller.moveSprite(Lynk, 100, 0)
+        Lynk.ay = 300
     }
     if (Player2Link == "true") {
         controller.player2.moveSprite(Lynk, 100, 0)
+        Lynk.ay = 300
     }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
@@ -363,34 +365,19 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
     if (CharChoice == 1) {
-        Mario.vy = -100
-    }
-    if (CharChoice2 == 1) {
-        Mario.vy = -100
+        Mario.vy = -200
     }
     if (CharChoice == 2) {
-        kiryb.vy = -100
-    }
-    if (CharChoice2 == 2) {
         kiryb.vy = -100
     }
     if (CharChoice == 3) {
         Meguhmen.vy = -100
     }
-    if (CharChoice2 == 3) {
-        Meguhmen.vy = -100
-    }
     if (CharChoice == 4) {
-        Pykuhchu.vy = -100
-    }
-    if (CharChoice2 == 4) {
         Pykuhchu.vy = -100
     }
     if (CharChoice == 5) {
         Lynk.vy = -100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = -100
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherSprite) {
@@ -398,6 +385,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
         if (LevelChoice == 0) {
             Map1()
             Ready.destroy()
+            Cursor1.destroy()
+            Cursor2.destroy()
         }
         if (CharChoice == 1) {
             Mario2()
@@ -429,8 +418,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.banner, function (sprite, otherS
         if (CharChoice2 == 5) {
             Link()
         }
-        pause(100)
-        CallGravity()
     }
 })
 function Kirby () {
@@ -454,9 +441,11 @@ function Kirby () {
 `, SpriteKind.Player)
     if (Player2Kirby == "false") {
         controller.moveSprite(kiryb, 100, 0)
+        kiryb.ay = 100
     }
     if (Player2Kirby == "true") {
         controller.player2.moveSprite(kiryb, 100, 0)
+        kiryb.ay = 100
     }
 }
 function MegaMan () {
@@ -480,9 +469,11 @@ function MegaMan () {
 `, SpriteKind.Player)
     if (Player2MegaMan == "false") {
         controller.moveSprite(Meguhmen, 100, 0)
+        Meguhmen.ay = 250
     }
     if (Player2MegaMan == "true") {
         controller.player2.moveSprite(Meguhmen, 100, 0)
+        Meguhmen.ay = 250
     }
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
@@ -500,7 +491,21 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     }
 })
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-	
+    if (CharChoice2 == 1) {
+        Mario.vy = -150
+    }
+    if (CharChoice2 == 2) {
+        kiryb.vy = -100
+    }
+    if (CharChoice2 == 3) {
+        Meguhmen.vy = -100
+    }
+    if (CharChoice2 == 4) {
+        Pykuhchu.vy = -100
+    }
+    if (CharChoice2 == 5) {
+        Lynk.ay = -100
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
@@ -555,9 +560,11 @@ function Pikachu () {
 `, SpriteKind.Player)
     if (Player2Pika == "false") {
         controller.moveSprite(Pykuhchu, 100, 0)
+        Pykuhchu.ay = 150
     }
     if (Player2Pika == "true") {
         controller.player2.moveSprite(Pykuhchu, 100, 0)
+        Pykuhchu.ay = 150
     }
 }
 function Mario2 () {
@@ -581,9 +588,11 @@ function Mario2 () {
 `, SpriteKind.Player)
     if (Player2Mario == "false") {
         controller.moveSprite(Mario, 100, 0)
+        Mario.ay = 500
     }
     if (Player2Mario == "true") {
         controller.player2.moveSprite(Mario, 100, 0)
+        Mario.ay = 500
     }
 }
 function Cursor_2 () {
@@ -663,40 +672,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
         CharChoice2 = 3
     }
 })
-function CallGravity () {
-    if (CharChoice == 1) {
-        Mario.ay = 100
-    }
-    if (CharChoice2 == 1) {
-        Mario.ay = 100
-    }
-    if (CharChoice == 2) {
-        kiryb.ay = 100
-    }
-    if (CharChoice2 == 2) {
-        kiryb.ay = 100
-    }
-    if (CharChoice == 3) {
-        Meguhmen.ay = 100
-    }
-    if (CharChoice2 == 3) {
-        Meguhmen.ay = 100
-    }
-    if (CharChoice == 4) {
-        Pykuhchu.ay = 100
-    }
-    if (CharChoice2 == 4) {
-        Pykuhchu.ay = 100
-    }
-    if (CharChoice == 5) {
-        Lynk.ay = 100
-    }
-    if (CharChoice2 == 5) {
-        Lynk.ay = 100
-    }
-}
-let Cursor1: Sprite = null
 let Cursor2: Sprite = null
+let Cursor1: Sprite = null
 let Ready: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
