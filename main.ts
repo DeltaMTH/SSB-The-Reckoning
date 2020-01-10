@@ -605,7 +605,7 @@ function Cursor_2 () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-    controller.player2.moveSprite(Cursor2, 100, 100)
+    controller.player2.moveSprite(Cursor2, 110, 110)
 }
 function Menu () {
     scene.centerCameraAt(88, 0)
@@ -647,7 +647,7 @@ function Cursor_1 () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-    controller.moveSprite(Cursor1, 100, 100)
+    controller.moveSprite(Cursor1, 110, 110)
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, location) {
     if (controller.player1.isPressed(ControllerButton.A)) {
