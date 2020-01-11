@@ -351,11 +351,11 @@ function Link () {
 1 1 1 1 1 f f f f f f f f 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
-    if (Player2Link == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(Lynk, 100, 0)
         Lynk.ay = 300
     }
-    if (Player2Link == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(Lynk, 100, 0)
         Lynk.ay = 300
     }
@@ -371,69 +371,74 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
     CharChoice = 5
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (LevelChoice == 0) {
-        Map1()
-        Ready.destroy()
-        Cursor1.destroy()
-        Cursor2.destroy()
-    }
-    if (CharChoice == 1) {
-        Mario2()
-    }
-    if (CharChoice2 == 1) {
-        Mario2()
-    }
-    if (CharChoice == 2) {
-        Kirby()
-    }
-    if (CharChoice2 == 2) {
-        Kirby()
-    }
-    if (CharChoice == 3) {
-        MegaMan()
-    }
-    if (CharChoice2 == 3) {
-        MegaMan()
-    }
-    if (CharChoice == 4) {
-        Pikachu()
-    }
-    if (CharChoice2 == 4) {
-        Pikachu()
-    }
-    if (CharChoice == 5) {
-        Link()
-    }
-    if (CharChoice2 == 5) {
-        Link()
-    }
-    if (CharChoice == 6) {
-        GameWatch()
-    }
-    if (CharChoice2 == 6) {
-        GameWatch()
+    if (StartGame1 == 1 && StartGame2 == 1) {
+        if (LevelChoice == 0) {
+            StartGame2 = 0
+            StartGame1 = 0
+            Game = 1
+            Map1()
+            Ready.destroy()
+            Cursor1.destroy()
+            Cursor2.destroy()
+        }
+        if (CharChoice == 1) {
+            Mario2()
+        }
+        if (CharChoice2 == 1) {
+            Mario2()
+        }
+        if (CharChoice == 2) {
+            Kirby()
+        }
+        if (CharChoice2 == 2) {
+            Kirby()
+        }
+        if (CharChoice == 3) {
+            MegaMan()
+        }
+        if (CharChoice2 == 3) {
+            MegaMan()
+        }
+        if (CharChoice == 4) {
+            Pikachu()
+        }
+        if (CharChoice2 == 4) {
+            Pikachu()
+        }
+        if (CharChoice == 5) {
+            Link()
+        }
+        if (CharChoice2 == 5) {
+            Link()
+        }
+        if (CharChoice == 6) {
+            GameWatch()
+        }
+        if (CharChoice2 == 6) {
+            GameWatch()
+        }
     }
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (StartGame1 == 1) {
-        if (CharChoice == 1) {
-            Mario.vy = -200
+    if (Game == 1) {
+        if (CharChoice == 1 && ChSelect2 == 1) {
+            Mario.vy = -150
         }
-        if (CharChoice == 2) {
+        if (CharChoice == 2 && ChSelect2 == 1) {
             kiryb.vy = -100
         }
-        if (CharChoice == 3) {
+        if (CharChoice == 3 && ChSelect2 == 1) {
             Meguhmen.vy = -100
         }
-        if (CharChoice == 4) {
+        if (CharChoice == 4 && ChSelect2 == 1) {
             Pykuhchu.vy = -100
         }
-        if (CharChoice == 5) {
-            Lynk.vy = -100
+        if (CharChoice == 5 && ChSelect2 == 1) {
+            Lynk.ay = -100
         }
-        if (CharChoice == 6) {
-            MrGameAndWatch.vy = -100
-        }
+    }
+    if (CharChoice == 6 && ChSelect2 == 1) {
+        MrGameAndWatch.ay = -100
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.brick, function (sprite, location) {
@@ -475,17 +480,16 @@ f 3 3 f 3 3 3 3 3 3 3 3 f 3 3 f
 f 2 2 2 2 2 f f f f 2 2 2 2 f . 
 . f f f f f . . . f f f f f . . 
 `, SpriteKind.Player)
-    if (Player2Kirby == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(kiryb, 100, 0)
-        kiryb.ay = 100
+        kiryb.ay = 150
     }
-    if (Player2Kirby == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(kiryb, 100, 0)
-        kiryb.ay = 100
+        kiryb.ay = 150
     }
 }
 function GameWatch () {
-    let Player2GameWatch = ""
     MrGameAndWatch = sprites.create(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 f f 1 1 1 1 1 1 1 1 1 1 
@@ -504,11 +508,11 @@ function GameWatch () {
 1 1 1 1 1 1 1 1 f f f f 1 f 1 1 
 1 1 1 1 1 1 1 1 1 f f f f 1 1 1 
 `, SpriteKind.Player)
-    if (Player2GameWatch == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(MrGameAndWatch, 100, 0)
         MrGameAndWatch.ay = 100
     }
-    if (Player2GameWatch == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(MrGameAndWatch, 100, 0)
         MrGameAndWatch.ay = 100
     }
@@ -532,11 +536,11 @@ function MegaMan () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
-    if (Player2MegaMan == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(Meguhmen, 100, 0)
         Meguhmen.ay = 250
     }
-    if (Player2MegaMan == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(Meguhmen, 100, 0)
         Meguhmen.ay = 250
     }
@@ -546,32 +550,35 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     ChSelect1 = 1
     CharChoice = 4
 })
+/**
+ * donc la il faut que tous les variables soient à la bonne place et que tout marche avant de commencer quelque chose d'autre
+ */
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    if (StartGame1 == 1) {
-        if (CharChoice2 == 1) {
+    if (Game == 1) {
+        if (Mario.isHittingTile(CollisionDirection.Bottom) && (CharChoice == 1 && ChSelect2 == 1)) {
             Mario.vy = -150
         }
-        if (CharChoice2 == 2) {
+        if (CharChoice == 2 && ChSelect2 == 1) {
             kiryb.vy = -100
         }
-        if (CharChoice2 == 3) {
+        if (CharChoice == 3 && ChSelect2 == 1) {
             Meguhmen.vy = -100
         }
-        if (CharChoice2 == 4) {
+        if (CharChoice == 4 && ChSelect2 == 1) {
             Pykuhchu.vy = -100
         }
-        if (CharChoice2 == 5) {
+        if (CharChoice == 5 && ChSelect2 == 1) {
             Lynk.ay = -100
         }
-        if (CharChoice2 == 6) {
-            MrGameAndWatch.ay = -100
-        }
+    }
+    if (CharChoice == 6 && ChSelect2 == 1) {
+        MrGameAndWatch.ay = -100
     }
 })
 scene.onOverlapTile(SpriteKind.Player2, myTiles.tile11, function (sprite, location) {
     tiles.setTileAt(tiles.getTileLocation(7, 6), myTiles.tile11)
     ChSelect2 = 1
-    CharChoice2 = 4
+    CharChoice2 = 3
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     tiles.setTileAt(tiles.getTileLocation(3, 6), myTiles.tile8)
@@ -615,11 +622,11 @@ function Pikachu () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
-    if (Player2Pika == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(Pykuhchu, 100, 0)
         Pykuhchu.ay = 150
     }
-    if (Player2Pika == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(Pykuhchu, 100, 0)
         Pykuhchu.ay = 150
     }
@@ -643,11 +650,11 @@ function Mario2 () {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, SpriteKind.Player)
-    if (Player2Mario == "false") {
+    if (ChSelect1 == 1) {
         controller.moveSprite(Mario, 100, 0)
         Mario.ay = 500
     }
-    if (Player2Mario == "true") {
+    if (ChSelect2 == 1) {
         controller.player2.moveSprite(Mario, 100, 0)
         Mario.ay = 500
     }
@@ -735,32 +742,23 @@ scene.onOverlapTile(SpriteKind.Player2, sprites.builtin.brick, function (sprite,
     ChSelect2 = 0
     CharChoice2 = 0
 })
-let StartGame2 = 0
 let MrGameAndWatch: Sprite = null
 let Pykuhchu: Sprite = null
 let Meguhmen: Sprite = null
 let kiryb: Sprite = null
 let Mario: Sprite = null
-let StartGame1 = 0
 let Cursor2: Sprite = null
 let Cursor1: Sprite = null
 let Ready: Sprite = null
+let Game = 0
+let StartGame2 = 0
+let StartGame1 = 0
 let ChSelect1 = 0
 let Lynk: Sprite = null
 let ChSelect2 = 0
 let LevelChoice = 0
 let CharChoice2 = 0
 let CharChoice = 0
-let Player2Link = ""
-let Player2Pika = ""
-let Player2MegaMan = ""
-let Player2Kirby = ""
-let Player2Mario = ""
-Player2Mario = "false"
-Player2Kirby = "false"
-Player2MegaMan = "false"
-Player2Pika = "false"
-Player2Link = "false"
 CharChoice = 0
 CharChoice2 = 0
 LevelChoice = 0
@@ -807,7 +805,5 @@ d d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 d f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 `, SpriteKind.banner)
         Ready.setPosition(87, 50)
-        StartGame1 = 0
-        StartGame2 = 0
     }
 })
