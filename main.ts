@@ -519,22 +519,30 @@ function GameWatch () {
 }
 function MegaMan () {
     Meguhmen = sprites.create(img`
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 f f 1 1 1 1 1 f f 1 1 1 1 1 
-1 1 f f 1 1 1 1 1 f f f 1 1 1 1 
-1 1 f 1 f f 1 1 f 1 1 f 1 1 1 1 
-1 1 f 1 1 f f 1 f 1 1 1 f 1 1 1 
-1 1 f 1 1 1 f f f 1 1 1 f 1 1 1 
-1 1 f 1 1 1 1 f 1 1 1 1 1 f 1 1 
-1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 f 1 1 1 1 1 1 1 f f 1 1 1 1 1 
-1 1 1 1 f f 1 1 1 f f 1 1 1 1 1 
-1 1 1 1 f 1 f 1 f 1 1 f 1 1 1 1 
-1 1 1 f 1 1 1 f f 1 1 f f 1 1 1 
-1 1 1 f 1 1 1 f f 1 1 1 1 1 1 1 
-1 1 1 f 1 1 1 f f 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+. . . . . . . . . . f f f . . . . . . . . 
+. . . . . . . . f f f 9 9 f . . . . . . . 
+. . . . . . . f 8 8 8 f 9 9 f . . . . . . 
+. . . . . . f 8 8 8 8 8 f f f f . . . . . 
+. . . . . . f 8 8 8 8 8 f 9 9 8 f . . . . 
+. . . . . f 9 8 8 8 8 8 8 f f 8 f . . . . 
+. . . . . f 9 8 8 d 1 1 1 8 8 1 f . . . . 
+. . . . . f 9 8 d 1 1 f f d f 1 f . . . . 
+. . . . . . f 8 d 1 1 f f d f 1 f . . . . 
+. . . . . f f 8 d d 1 1 1 d 1 d f . . . . 
+. . . f f 9 9 f 8 d f f f f d f f f . . . 
+. . f 8 9 9 9 9 f d d d d d f 9 9 8 f . . 
+. . f 8 8 9 9 9 9 f f f f f 9 9 8 8 f . . 
+. f 8 8 8 9 f 9 9 9 9 9 9 9 f 9 8 8 8 f . 
+. f 8 8 f f f 9 9 9 9 9 9 9 f f f 8 8 f . 
+. f 8 8 8 f f 9 9 9 9 9 9 9 f f 8 8 8 f . 
+. f 8 8 8 f f 8 8 8 8 8 8 8 f f 8 8 8 f . 
+. . f f f f f 8 8 8 8 8 8 8 f f f f f . . 
+. . . . . f 9 9 8 8 8 8 9 9 9 f . . . . . 
+. . . . f 8 8 9 9 9 f 9 9 9 9 8 f . . . . 
+. . . f f 8 8 8 9 f . f 9 8 8 8 f f . . . 
+. f f 8 8 8 8 8 f . . . f 8 8 8 8 8 f f . 
+f 8 8 8 8 8 8 8 f . . . f 8 8 8 8 8 8 8 f 
+f f f f f f f f f . . . f f f f f f f f f 
 `, SpriteKind.Player)
     if (ChSelect1 == 1) {
         controller.moveSprite(Meguhmen, 100, 0)
